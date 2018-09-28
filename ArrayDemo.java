@@ -50,17 +50,17 @@ public static void fill2D(int[][] vals){
 }
 
 public static int[][] fill2DCopy(int[][] vals){
-  int[][] output;
+  int[][] output = new int[vals.length][];
   for (int a = 0; a < vals.length; a += 1) {
-    int[] output[a];
-    output[a] = new int[vals[a].length];
+    int[] stand = new int[vals[a].length];
     for (int b = 0; b < vals[a].length; b += 1) {
       if (vals[a][b] < 0) {
-        output[a][b] = 3;
+        stand[b] = 3;
       } else {
-        output[a][b] = 1;
+        stand[b] = 1;
       }
     }
+      output[a] = stand;
   }
   return output;
 }
