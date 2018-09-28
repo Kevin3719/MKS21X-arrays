@@ -10,6 +10,8 @@ public static void printArray(int[] ary){
   }
   System.out.print("]");
 }
+
+
 public static void printArray(int[][]ary){
   for (int a = 0; a < ary.length; a += 1) {
       System.out.print("[");
@@ -50,8 +52,10 @@ public static void fill2D(int[][] vals){
 }
 
 public static int[][] fill2DCopy(int[][] vals){
+  //makes a new array with the correct length
   int[][] output = new int[vals.length][];
   for (int a = 0; a < vals.length; a += 1) {
+    //I didn't know how else to do it. SO, I created a standin.
     int[] stand = new int[vals[a].length];
     for (int b = 0; b < vals[a].length; b += 1) {
       if (vals[a][b] < 0) {
@@ -60,6 +64,7 @@ public static int[][] fill2DCopy(int[][] vals){
         stand[b] = 1;
       }
     }
+    //dubplicates the copy
       output[a] = stand;
   }
   return output;
@@ -68,5 +73,9 @@ public static int[][] fill2DCopy(int[][] vals){
 public static void main (String[] args) {
   int[] test0a = new int[10];
   printArray(test0a);
+  System.out.print("hi");
+  int[][] test0b = new int[10][10];
+  printArray(test0b);
 }
+
 }
