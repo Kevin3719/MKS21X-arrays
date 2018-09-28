@@ -76,6 +76,15 @@ public static void main (String[] args) {
   System.out.print("hi");
   int[][] test0b = new int[10][10];
   printArray(test0b);
+  int[][] test1 = new int[1][1];
+  int[] astep = {1,2,3,4};
+  int[] bstep = {1,2,3,4};
+  test1[1] = astep;
+  test1[0] = bstep;
+  System.out.print(countZeros2D(test1));
+  System.out.print(fill2DCopy(test1));
+  System.out.print(fill2DCopy(test1));
+  fill2DCopy(test1);
 }
 
 }
