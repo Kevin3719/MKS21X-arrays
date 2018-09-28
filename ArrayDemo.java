@@ -13,7 +13,7 @@ public static void printArray(int[] ary){
 public static void printArray(int[][]ary){
   for (int a = 0; a < ary.length; a += 1) {
       System.out.print("[");
-    for (int b = 0; b < ary.length; b += 1) {
+    for (int b = 0; b < ary[a].length; b += 1) {
       System.out.print("" + ary[a][b]);
       if (b < ary.length - 1) {
         System.out.print(", ");
@@ -23,6 +23,46 @@ public static void printArray(int[][]ary){
     System.out.print("],");}
   }
   System.out.print("]");
+}
+
+public static int countZeros2D(int[][] nums){
+  int output = 0;
+  for (int a = 0; a < nums.length; a += 1) {
+    for (int b = 0; b < nums[a].length; b += 1) {
+      if (nums[a][b] == 0) {
+        output += 1;
+      }
+    }
+  }
+  return output;
+}
+
+public static void fill2D(int[][] vals){
+  for (int a = 0; a < vals.length; a += 1) {
+    for (int b = 0; b < vals[a].length; b += 1) {
+      if (vals[a][b] == b) {
+        vals[a][b] = 3;
+      } else {
+        vals[a][b] = 1;
+      }
+    }
+  }
+}
+
+public static int[][] fill2DCopy(int[][] vals){
+  int[][] output;
+  for (int a = 0; a < vals.length; a += 1) {
+    int[] output[a];
+    output[a] = new int[vals[a].length];
+    for (int b = 0; b < vals[a].length; b += 1) {
+      if (vals[a][b] < 0) {
+        output[a][b] = 3;
+      } else {
+        output[a][b] = 1;
+      }
+    }
+  }
+  return output;
 }
 //test case//
 public static void main (String[] args) {
